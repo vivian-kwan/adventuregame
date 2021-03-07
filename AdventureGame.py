@@ -31,11 +31,11 @@ def validinput(prompt, option1, option2):
 
 # Output text to the console.
 def intro(weapon, monster):
-    print_pause(f"Rumor has it that a {monster} is somewhere around here,",
+    print_pause(f"Rumor has it that a {monster} is somewhere around here,"+
                 " and has been terrifying the nearby village.")
     print_pause("In front of you is a house.")
     print_pause("To your right is a dark cave.")
-    print_pause("In your hand you hold your trusty",
+    print_pause("In your hand you hold your trusty"+
                 " (but not very effective) dagger.")
     weapon = "dagger"
     enterthefield(weapon, monster)
@@ -57,13 +57,13 @@ def enterthefield(weapon, monster):
 def enterthecave(weapon, monster):
     print_pause("You peer cautiously into the cave.")
     if "sword" in weapon:
-        print_pause("You've been here before, and gotten all the good stuff. ",
+        print_pause("You've been here before, and gotten all the good stuff. "+
                     "It's just an empty cave now.")
     elif "dagger" in weapon:
         print_pause("It turns out to be only a very small cave.")
         print_pause("Your eye catches a glint of metal behind a rock.")
         print_pause("You have found the magical Sword of Ogoroth!")
-        print_pause("You discard your silly old dagger ",
+        print_pause("You discard your silly old dagger "+
                     "and take the sword with you.")
         weapon = "sword"
     print_pause("You walk back out to the field.")
@@ -72,12 +72,12 @@ def enterthecave(weapon, monster):
 
 def knockdoor(weapon, monster):
     print_pause("You approach the door of the house.")
-    print_pause(f"You are about to knock when the door opens ",
-                "and out steps a {monster}.")
+    print_pause(f"You are about to knock when the door opens "+
+                f"and out steps a {monster}.")
     print_pause(f"Eep! This is the {monster}'s house!")
     print_pause(f"The {monster} attacks you!")
     if "dagger" in weapon:
-        print_pause(f"You feel a bit under-prepared for this,",
+        print_pause(f"You feel a bit under-prepared for this,"+
                     f" what with only having a tiny {weapon}.")
     # Use the input function in combination with conditional statements
     # (e.g., if and while) to create an interactive program.
@@ -86,7 +86,7 @@ def knockdoor(weapon, monster):
     if fight_or_run == "1":
         fight(weapon, monster)
     elif fight_or_run == "2":
-        print_pause("You run back into the field. ",
+        print_pause("You run back into the field. "+
                     "Luckily, you don't seem to have been followed.")
         enterthefield(weapon, monster)
 
@@ -107,17 +107,17 @@ def fight_with_dagger(weapon, monster):
     playagain = validinput("Would you like to play again? (y/n)\n", "y", "n")
     if playagain == "y":
         print_pause("Excellent! Restarting the game ...")
-        play(weapon, monster)
+        play()
     elif playagain == "n":
         return("Thanks for playing! See you next time.")
 
 
 def fight_with_sword(weapon, monster):
-    print_pause(f"As the {monster} moves to attack, you unsheath ",
+    print_pause(f"As the {monster} moves to attack, you unsheath "+
                 "your new sword.")
-    print_pause("The Sword of Ogoroth shines brightly in your hand ",
+    print_pause("The Sword of Ogoroth shines brightly in your hand "+
                 "as you brace yourself for the attack.")
-    print_pause(f"But the {monster} takes one look at your shiny new toy ",
+    print_pause(f"But the {monster} takes one look at your shiny new toy "+
                 "and runs away!")
     print_pause(f"You have rid the town of the {monster}. You are victorious!")
     # Use the input function in combination with conditional statements
